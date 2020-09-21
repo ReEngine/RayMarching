@@ -29,9 +29,10 @@ namespace RayMarching
                 Grid.DrawLine(0, 0, i, Grid.Height - 1, ConsoleColor.Cyan);
             for (int i = 0; i < Grid.Width; i += 10)
                 Grid.DrawLine(Grid.Width - 1, 0, i, Grid.Height - 1, ConsoleColor.Magenta);
-            Grid.DrawCircle(20, 20, 10, ConsoleColor.Red);
+            Grid.DrawCircle(Grid.Width-5, 20, 10, ConsoleColor.Red);
             
             Console.ReadKey();
+            
 
         }
         static void Rofl()

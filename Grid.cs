@@ -61,9 +61,18 @@ namespace RayMarching
         }
         static public void DrawPoint(int x, int y, ConsoleColor color)
         {
-            Console.SetCursorPosition(x * 2, y);
-            Console.ForegroundColor = color;
-            Console.Write("██");
+            try
+            {
+                Console.SetCursorPosition(x * 2, y);
+                Console.ForegroundColor = color;
+                Console.Write("██");
+            }
+            catch
+            {
+
+            }
+
+
             // Console.Write("##");
         }
         static public void DrawLine(int x0, int y0, int x1, int y1)
@@ -118,6 +127,10 @@ namespace RayMarching
                     err += dx;
                 }
             }
+        }
+        static public void DrawCircle(int x0, int y0, int r)
+        {
+            DrawCircle(x0, y0, r, ConsoleColor.Red);
         }
         static public void DrawCircle(int x0, int y0, int r, ConsoleColor color)
         {
