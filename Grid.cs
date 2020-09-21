@@ -55,14 +55,22 @@ namespace RayMarching
                 return false;
             }
         }
-
         static public void DrawPoint(int x, int y)
         {
+            DrawPoint(x, y, ConsoleColor.Gray);
+        }
+        static public void DrawPoint(int x, int y, ConsoleColor color)
+        {
             Console.SetCursorPosition(x * 2, y);
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = color;
             Console.Write("██");
+            // Console.Write("##");
         }
         static public void DrawLine(int x0, int y0, int x1, int y1)
+        {
+            DrawLine(x0, y0, x1, y1, ConsoleColor.Gray);
+        }
+        static public void DrawLine(int x0, int y0, int x1, int y1, ConsoleColor color)
         {
             bool steep = Math.Abs(y1 - y0) > Math.Abs(x1 - x0);
             if (steep)
@@ -97,11 +105,11 @@ namespace RayMarching
             {
                 if (steep)
                 {
-                    DrawPoint(y0, x0);
+                    DrawPoint(y0, x0, color);
                 }
                 else
                 {
-                    DrawPoint(x0, y0);
+                    DrawPoint(x0, y0, color);
                 }
                 err -= dy;
                 if (err < 0)
@@ -111,5 +119,43 @@ namespace RayMarching
                 }
             }
         }
+        static public void DrawCircle(int x0, int y0, int r, ConsoleColor color)
+        {
+            int f = 1 - r;
+            int ddF_x = 1;
+            int ddF_y = -2 * r;
+            int x = 0;
+            int y = r;
+
+
+            DrawPoint(x0, y0 + r, color);
+            DrawPoint(x0, y0 - r, color);
+            DrawPoint(x0 + r, y0, color);
+            DrawPoint(x0 - r, y0, color);
+
+            while (x < y)
+            {
+                if (f >= 0)
+                {
+                    y--;
+                    ddF_y += 2;
+                    f += ddF_y;
+                }
+                x++;
+                ddF_x += 2;
+                f += ddF_x;
+
+                DrawPoint(x0 + x, y0 + y, color);
+                DrawPoint(x0 - x, y0 + y, color);
+                DrawPoint(x0 + x, y0 - y, color);
+                DrawPoint(x0 - x, y0 - y, color);
+                DrawPoint(x0 + y, y0 + x, color);
+                DrawPoint(x0 - y, y0 + x, color);
+                DrawPoint(x0 + y, y0 - x, color);
+                DrawPoint(x0 - y, y0 - x, color);
+            }
+
+        }
     }
 }
+
