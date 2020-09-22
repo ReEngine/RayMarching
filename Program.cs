@@ -25,14 +25,24 @@ namespace RayMarching
 
 
 
-            for (int i = 0; i < Grid.Width; i += 10)
-                Grid.DrawLine(0, 0, i, Grid.Height - 1, ConsoleColor.Cyan);
-            for (int i = 0; i < Grid.Width; i += 10)
-                Grid.DrawLine(Grid.Width - 1, 0, i, Grid.Height - 1, ConsoleColor.Magenta);
-            Grid.DrawCircle(Grid.Width-5, 20, 10, ConsoleColor.Red);
-            
+            //for (int i = 0; i < Grid.Width; i += 10)
+            //    Grid.DrawLine(0, 0, i, Grid.Height - 1, ConsoleColor.Cyan);
+            //for (int i = 0; i < Grid.Width; i += 10)
+            //    Grid.DrawLine(Grid.Width - 1, 0, i, Grid.Height - 1, ConsoleColor.Magenta);
+            //Grid.DrawCircle(Grid.Width-5, 20, 10, ConsoleColor.Red);
+            //Rofl();
+            for (int i = 0; i < Grid.Width - 1;i++)
+            {
+                for (int a = 0; a < Grid.Height - 1;a++)
+                {
+                    Grid.DrawPoint(i, a, ConsoleColor.Blue);
+                }
+            }
+                Grid.FilCircle(10, 20, 5, ConsoleColor.Red);
+            Grid.FilCircle(Grid.Width / 2, 360, 310, ConsoleColor.Yellow);
+
             Console.ReadKey();
-            
+
 
         }
         static void Rofl()

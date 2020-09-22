@@ -38,7 +38,7 @@ namespace RayMarching
             Console.SetWindowSize(windowX, windowY);
             ShowWindow(ThisConsole, 3);
             Console.CursorVisible = false;
-
+            
         }
 
         static bool Swap<T>(ref T x, ref T y)
@@ -63,9 +63,12 @@ namespace RayMarching
         {
             try
             {
-                Console.SetCursorPosition(x * 2, y);
-                Console.ForegroundColor = color;
-                Console.Write("██");
+                if (y < Grid.Height-1)
+                {
+                    Console.SetCursorPosition(x * 2, y);
+                    Console.ForegroundColor = color;
+                    Console.Write("██");
+                }
             }
             catch
             {
@@ -168,6 +171,17 @@ namespace RayMarching
                 DrawPoint(x0 - y, y0 - x, color);
             }
 
+        }
+        static public void FilCircle(int x0, int y0, int r, ConsoleColor color)
+        {
+            for (int i = r; i >0; i --)
+            {
+                DrawCircle(x0, y0, i, color);
+            }
+        }
+        static public void FilCircle(int x0, int y0, int r)
+        {
+            FilCircle(x0, y0, r, ConsoleColor.Gray);
         }
     }
 }
