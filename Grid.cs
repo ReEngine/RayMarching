@@ -38,7 +38,7 @@ namespace RayMarching
             Console.SetWindowSize(windowX, windowY);
             ShowWindow(ThisConsole, 3);
             Console.CursorVisible = false;
-            
+
         }
 
         static bool Swap<T>(ref T x, ref T y)
@@ -63,7 +63,7 @@ namespace RayMarching
         {
             try
             {
-                if (y < Grid.Height-1)
+                if (y < Grid.Height - 1)
                 {
                     Console.SetCursorPosition(x * 2, y);
                     Console.ForegroundColor = color;
@@ -174,7 +174,7 @@ namespace RayMarching
         }
         static public void FilCircle(int x0, int y0, int r, ConsoleColor color)
         {
-            for (int i = r; i >0; i --)
+            for (int i = r; i > 0; i--)
             {
                 DrawCircle(x0, y0, i, color);
             }
@@ -182,6 +182,25 @@ namespace RayMarching
         static public void FilCircle(int x0, int y0, int r)
         {
             FilCircle(x0, y0, r, ConsoleColor.Gray);
+        }
+        static public void DrawRectangle(int x0, int y0, int x1, int y1, ConsoleColor color)
+        {
+            Grid.DrawLine(x0, y0, x0, y1, color);
+            Grid.DrawLine(x0, y0, x1, y0, color);
+            Grid.DrawLine(x1, y0, x1, y1, color);
+            Grid.DrawLine(x0, y1, x1, y1, color);
+
+        }
+        static public void DrawRectangle(int x0, int y0, int x1, int y1)
+        {
+            DrawRectangle(x0, y0, x1, y1, ConsoleColor.Gray);
+        }
+        static public void FillRectangle(int x0, int y0, int x1, int y1, ConsoleColor color)
+        {
+            for (int i = x0; i <= x1; i++)
+            {
+                Grid.DrawLine(i, y0, i, y1,color);
+            }
         }
     }
 }
