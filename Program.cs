@@ -19,7 +19,7 @@ namespace RayMarching
             }
 
 
-            Console.Title = "Console 2Dimensional Graphics Engine";
+            Console.Title = "Console 3Dimensional Graphics Engine";
             Grid.InitializeScreen();
             Grid.InitializeGrid();
 
@@ -50,41 +50,12 @@ namespace RayMarching
             //Console.ReadKey();
             //Console.Clear();
 
-            Render.RunTestScene();
-            Console.ReadKey();
+            for (double i = 0; ; i+= 0.1)
+            {
+                Render.RunTestScene(i);
+            }
 
 
-        }
-        static void Rofl()
-        {
-            string message = "Помогите!";
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.SetCursorPosition(Console.WindowWidth / 2 - message.Length / 2, Console.WindowHeight / 2);
-            Console.Write(message);
-            message = "Я заебался!";
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.SetCursorPosition(Console.WindowWidth / 2 - message.Length / 2, Console.WindowHeight / 2 + 1);
-            Console.Write(message);
-            message = "Я пишу этиу хуйню уже несколько часов...";
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.SetCursorPosition(Console.WindowWidth / 2 - message.Length / 2, Console.WindowHeight / 2 + 2);
-            Console.Write(message);
-            message = "Но так и не добился почти ничего из того, что задумывал до этого.";
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.SetCursorPosition(Console.WindowWidth / 2 - message.Length / 2, Console.WindowHeight / 2 + 3);
-            Console.Write(message);
-            message = "Это всё равно, что рисовать на печатной машинке!";
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.SetCursorPosition(Console.WindowWidth / 2 - message.Length / 2, Console.WindowHeight / 2 + 4);
-            Console.Write(message);
-            message = "Тут могла быть ваша реклама!";
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.SetCursorPosition(Console.WindowWidth / 2 - message.Length / 2, Console.WindowHeight / 2 + 5);
-            Console.Write(message);
-            message = "ХИМТЕХ ЛУЧШЕ ВСЕХ!";
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.SetCursorPosition(Console.WindowWidth / 2 - message.Length / 2, Console.WindowHeight / 2 + 6);
-            Console.Write(message);
         }
 
     }

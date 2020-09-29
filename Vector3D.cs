@@ -22,6 +22,13 @@ namespace RayMarching
             Vector3D vector = new Vector3D(X * inv_length, Y * inv_length, Z * inv_length);
             return vector;
         }
+        public static Vector3D Normalize(Vector3D inpVector)
+        {
+            double length = inpVector.Length();
+            double inv_length = (1 / length);
+            Vector3D vector = new Vector3D(inpVector.X * inv_length, inpVector.Y * inv_length, inpVector.Z * inv_length);
+            return vector;
+        }
         public double Length()
         {
             double length = Math.Sqrt((X * X) + (Y * Y) + (Z * Z));
@@ -31,6 +38,11 @@ namespace RayMarching
         {
             double length = Math.Sqrt((vector.X * vector.X) + (vector.Y * vector.Y) + (vector.Z * vector.Z));
             return length;
+        }
+        public static double DotProduct(Vector3D vector1, Vector3D vector2)
+        {
+            double dotProduct = ((vector1.X*vector2.X)+ (vector1.Y * vector2.Y) + (vector1.Z * vector2.Z));
+            return dotProduct;
         }
         public static Vector3D Subtract(Vector3D vector1, Vector3D vector2)
         {
