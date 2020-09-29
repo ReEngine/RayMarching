@@ -40,7 +40,17 @@ namespace RayMarching
             //}
             //    Grid.FilCircle(10, 20, 5, ConsoleColor.Red);
             //Grid.FilCircle(Grid.Width / 2, 360, 310, ConsoleColor.Yellow);
-            Editor.EditorInitialize();
+            //Editor.EditorInitialize();
+            //Vector3D vector1 = new Vector3D(1,2,3);
+            //Console.WriteLine("Vector ("+ vector1.X + ", " + vector1.Y + ", " + vector1.Z + ").");
+            //Console.WriteLine("Vector length = "+ vector1.Length());
+            //vector1 = vector1.Normalize();
+            //Console.WriteLine("Vector normalized = " + vector1.X + ", " + vector1.Y + ", " + vector1.Z);
+            //Console.WriteLine("Normalized vector length = " + vector1.Length());
+            //Console.ReadKey();
+            //Console.Clear();
+
+            Render.RunTestScene();
             Console.ReadKey();
 
 

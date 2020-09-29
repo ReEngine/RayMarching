@@ -78,6 +78,26 @@ namespace RayMarching
 
             // Console.Write("##");
         }
+        static public void DrawPoint(int x, int y, char symbol)
+        {
+            try
+            {
+                if (y < Grid.Height - 1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.SetCursorPosition(x * 2, y);
+                    Console.Write(symbol);
+                    Console.Write(symbol);
+                }
+            }
+            catch
+            {
+
+            }
+
+
+            // Console.Write("##");
+        }
         static public void DrawLine(int x0, int y0, int x1, int y1)
         {
             DrawLine(x0, y0, x1, y1, ConsoleColor.Gray);
